@@ -3,3 +3,9 @@ blogger_blogBundle_homepage:
     defaults: { _controller: BloggerBlogBundle:Page:index }
     requirements:
         _method:  GET
+
+blogger_blogBundle_about:
+    pattern:  /about
+    defaults: { _controller: BloggerBlogBundle:Page:about }
+    requirements:
+        _method:  GET
