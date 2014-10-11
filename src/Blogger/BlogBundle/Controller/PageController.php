@@ -32,4 +32,16 @@ class PageController extends Controller
     {
         return array();
     }
+
+    /**
+     * about page.
+     *
+     * @return array
+     *
+     * @Template()
+     */
+    public function contactAction()
+    {
+        return array();
+    }
 }
