@@ -52,8 +52,13 @@ class PageController extends Controller
             $form->bind($request);
 
             if ($form->isValid()) {
-                // 表单验证通过，执行一些操作，如发送邮件。
-                // doSometing();
+                $message = \Swift_Message::newInstance()
+                    ->setSubject('Contact enquiry from symblog')
+                    ->setFrom('send account')       // 发件帐号
+                    ->setTo('receive account')      // 收件帐号
+                    ->setBody($this->renderView('BloggerBlogBundle:Page:contactEmail.txt.twig', array('enquiry' => $enquiry)));
+                $this->get('mailer')->send($message);
+                $this->get('session')->getFlashBag()->set('blogger-notice', 'Your contact enquiry was successfully sent. Thank you!');
 
                 return $this->redirect($this->generateUrl('blogger_blogBundle_contact'));
             }
