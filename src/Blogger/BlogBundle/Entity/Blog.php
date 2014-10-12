@@ -303,4 +303,12 @@ class Blog
     {
         return $this->comments;
     }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
 }
