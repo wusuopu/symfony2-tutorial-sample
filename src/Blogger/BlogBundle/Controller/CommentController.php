@@ -47,8 +47,7 @@ class CommentController extends Controller
         $form->bind($request);
 
         if ($form->isValid()) {
-            $em = $this->getDoctrine()
-                       ->getEntityManager();
+            $em = $this->getDoctrine()->getManager();
             $em->persist($comment);
             $em->flush();
 
@@ -66,8 +65,7 @@ class CommentController extends Controller
 
     protected function getBlog($blogId)
     {
-        $em = $this->getDoctrine()
-                    ->getEntityManager();
+        $em = $this->getDoctrine()->getManager();
 
         $blog = $em->getRepository('BloggerBlogBundle:Blog')->find($blogId);
 
