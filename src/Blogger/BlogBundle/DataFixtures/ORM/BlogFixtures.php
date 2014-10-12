@@ -71,6 +71,12 @@ class BlogFixtures extends AbstractFixture implements OrderedFixtureInterface
         $manager->persist($blog5);
 
         $manager->flush();
+
+        $this->addReference('blog-1', $blog1);
+        $this->addReference('blog-2', $blog2);
+        $this->addReference('blog-3', $blog3);
+        $this->addReference('blog-4', $blog4);
+        $this->addReference('blog-5', $blog5);
     }
 
     /**
