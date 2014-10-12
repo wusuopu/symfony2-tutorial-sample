@@ -9,4 +9,17 @@
     </header>
 
     <p>Want to contact symblog?</p>
+
+    <form action="{{ path('blogger_blogBundle_contact') }}" method="post" {{ form_enctype(form) }} class="blogger">
+        {{ form_errors(form) }}
+
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.subject) }}
+        {{ form_row(form.body) }}
+
+        {{ form_rest(form) }}
+
+        <input type="submit" />
+    </form>
 {% endblock %}
