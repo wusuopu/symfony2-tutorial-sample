@@ -151,11 +151,17 @@ class Blog
     /**
      * Get blog
      *
+     * @param integer $length
+     *
      * @return string
      */
-    public function getBlog()
+    public function getBlog($length = null)
     {
-        return $this->blog;
+        if (empty($length) || $length <= 0) {
+            return $this->blog;
+        } else {
+            return mb_substr($this->blog, 0, $length);
+        }
     }
 
     /**

@@ -93,4 +93,12 @@ class User
     {
         return $this->email;
     }
+
+    /**
+     * @return string
+     */
+    public function __tostring()
+    {
+        return $this->name;
+    }
 }

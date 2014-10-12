@@ -16,11 +16,18 @@ class PageController extends Controller
     /**
      * index page.
      *
-     * @return Response
+     * @return array
+     *
+     * @Template()
      */
     public function indexAction()
     {
-        return $this->render('BloggerBlogBundle:Page:index.html.twig');
+        $em = $this->getDoctrine()->getManager();
+
+        $blogs = $em->getRepository('BloggerBlogBundle:Blog')
+                    ->getLatestBlogs();
+
+        return array('blogs' => $blogs);
     }
 
     /**
