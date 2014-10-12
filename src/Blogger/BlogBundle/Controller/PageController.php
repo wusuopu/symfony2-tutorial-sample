@@ -89,7 +89,8 @@ class PageController extends Controller
 
         $tagWeights = $em->getRepository('BloggerBlogBundle:Blog')
                          ->getTagWeights($tags);
+        $latestComments = $em->getRepository('BloggerBlogBundle:Comment')->getLatestComments(10);
 
-        return array('tags' => $tagWeights);
+        return array('tags' => $tagWeights, 'latestComments' => $latestComments);
     }
 }
