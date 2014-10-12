@@ -73,4 +73,23 @@ class PageController extends Controller
 
         return array('form' => $form->createView());
     }
+
+    /**
+     * @return array
+     *
+     * @Template()
+     */
+    public function sidebarAction()
+    {
+        $em = $this->getDoctrine()
+                   ->getEntityManager();
+
+        $tags = $em->getRepository('BloggerBlogBundle:Blog')
+                   ->getTags();
+
+        $tagWeights = $em->getRepository('BloggerBlogBundle:Blog')
+                         ->getTagWeights($tags);
+
+        return array('tags' => $tagWeights);
+    }
 }
