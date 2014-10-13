@@ -19,6 +19,8 @@
         "sensio/framework-extra-bundle": "~3.0",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "doctrine/data-fixtures": "dev-master",
+        "doctrine/doctrine-migrations-bundle": "dev-master",
+        "doctrine/migrations": "dev-master",
         "incenteev/composer-parameter-handler": "~2.0"
     },
     "require-dev": {
