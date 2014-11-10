@@ -39,6 +39,10 @@ class PageController extends Controller
      */
     public function aboutAction()
     {
+        $logger = $this->get('monolog.logger.applog');
+        $logger->info('I just got the logger');
+        $logger->error('An error occurred');
+
         return array();
     }
 

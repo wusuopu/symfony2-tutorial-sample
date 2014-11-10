@@ -20,6 +20,12 @@ monolog:
         console:
             type:   console
             bubble: false
+        applog:
+            type:   stream
+            path:   /tmp/symfony2.log
+            level:  info
+            channels: [applog]
+    channels: ["applog", "main"]
         # uncomment to get logging in your browser
         # you may have to allow bigger header sizes in your Web server configuration
         #firephp:
