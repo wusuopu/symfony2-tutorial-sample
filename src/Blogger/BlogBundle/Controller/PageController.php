@@ -43,6 +43,9 @@ class PageController extends Controller
         $logger->info('I just got the logger');
         $logger->error('An error occurred');
 
+        $msg = $this->get('translator')->trans('A message.');
+        $logger->info($msg);
+
         return array();
     }
 
